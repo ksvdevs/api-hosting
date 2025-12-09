@@ -7,6 +7,7 @@ import { AppService } from './app.service';
 import { databaseConfig, jwtConfig, supabaseConfig } from './config';
 import { UsersModule } from './modules/users';
 import { AuthModule } from './modules/auth';
+import { PlansModule } from './modules/plans';
 
 @Module({
   imports: [
@@ -35,6 +36,7 @@ import { AuthModule } from './modules/auth';
     // Feature modules
     UsersModule,
     AuthModule,
+    PlansModule,
   ],
   controllers: [AppController],
   providers: [
