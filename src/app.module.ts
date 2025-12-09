@@ -5,6 +5,8 @@ import { APP_PIPE } from '@nestjs/core';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { databaseConfig, jwtConfig, supabaseConfig } from './config';
+import { UsersModule } from './modules/users';
+import { AuthModule } from './modules/auth';
 
 @Module({
   imports: [
@@ -30,6 +32,9 @@ import { databaseConfig, jwtConfig, supabaseConfig } from './config';
       }),
       inject: [ConfigService],
     }),
+    // Feature modules
+    UsersModule,
+    AuthModule,
   ],
   controllers: [AppController],
   providers: [
@@ -45,4 +50,4 @@ import { databaseConfig, jwtConfig, supabaseConfig } from './config';
     },
   ],
 })
-export class AppModule {}
+export class AppModule { }
